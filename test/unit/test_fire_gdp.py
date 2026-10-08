@@ -4,10 +4,24 @@ import unittest
 import fire_gdp 
 
 
+DATA = os.path.join(os.path.dirname(__file__), '..', 'data')
+CO2 = os.path.join(DATA, 'co2_small.csv')
+GDP = os.path.join(DATA, 'gdp_small.csv')
+
+
 class TestGetColumnIndex(unittest.TestCase):
 
     def test_name_present(self):
         pass
+
+
+class TestGetData(unittest.TestCase):
+
+    def test_no_query(self):
+        rows = fire_gdp.get_data(CO2)
+        self.assertEqual(len(rows), 8)
+        self.assertEqual(rows[0][0], 'Brazil')
+
 
 if __name__ == '__main__':
     unittest.main()
