@@ -1,8 +1,20 @@
+import csv
+
+
 def get_data(file_name,
              query_column=None,
              query_value=None,
              return_header=False):
-    pass
+    rows = []
+    with open(file_name, 'r', newline='') as f:
+        reader = csv.reader(f)
+        header = next(reader)
+        for row in reader:
+            rows.append(row)
+    if return_header:
+        return header, rows
+    return rows
+
 
 def get_column_index(header, column_name):
     pass
