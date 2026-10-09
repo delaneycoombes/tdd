@@ -46,4 +46,3 @@ def get_fire_gdp_year_data(co2_file, gdp_file, country):
             continue
         result.append([int(year), float(fire), float(gdp)])
     return result
-

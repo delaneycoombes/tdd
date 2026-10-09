@@ -1,7 +1,7 @@
 import os
 import sys
 import unittest
-import fire_gdp 
+import fire_gdp
 
 
 DATA = os.path.join(os.path.dirname(__file__), '..', 'data')
@@ -47,7 +47,7 @@ class TestGetFireGdpYearData(unittest.TestCase):
         result = fire_gdp.get_fire_gdp_year_data(CO2, GDP, 'Brazil')
         self.assertEqual(result, [[2004, 100.5, 1000.5],
                                   [2005, 200.25, 2000.25]])
-        
+
 
 if __name__ == '__main__':
     unittest.main()
