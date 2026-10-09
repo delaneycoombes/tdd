@@ -22,6 +22,12 @@ class TestGetData(unittest.TestCase):
         self.assertEqual(len(rows), 8)
         self.assertEqual(rows[0][0], 'Brazil')
 
+    def test_query_match(self):
+        rows = fire_gdp.get_data(CO2, 0, 'Brazil')
+        self.assertEqual(len(rows), 5)
+        for row in rows:
+            self.assertEqual(row[0], 'Brazil')
+
 
 if __name__ == '__main__':
     unittest.main()
