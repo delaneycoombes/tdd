@@ -12,7 +12,7 @@ GDP = os.path.join(DATA, 'gdp_small.csv')
 class TestGetColumnIndex(unittest.TestCase):
 
     def test_name_present(self):
-        pass
+        self.assertEqual(fire_gdp.get_column_index(['a', 'b', 'c'], 'b'), 1)
 
 
 class TestGetData(unittest.TestCase):
