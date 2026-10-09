@@ -17,6 +17,9 @@ class TestGetColumnIndex(unittest.TestCase):
     def test_name_absent(self):
         self.assertIsNone(fire_gdp.get_column_index(['a', 'b'], 'z'))
 
+    def test_empty_header(self):
+        self.assertIsNone(fire_gdp.get_column_index([], 'a'))
+
 
 class TestGetData(unittest.TestCase):
 
