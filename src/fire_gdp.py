@@ -10,7 +10,8 @@ def get_data(file_name,
         reader = csv.reader(f)
         header = next(reader)
         for row in reader:
-            rows.append(row)
+            if query_column is None or row[query_column] == query_value:
+                rows.append(row)
     if return_header:
         return header, rows
     return rows
