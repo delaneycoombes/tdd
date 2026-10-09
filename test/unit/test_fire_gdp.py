@@ -14,6 +14,9 @@ class TestGetColumnIndex(unittest.TestCase):
     def test_name_present(self):
         self.assertEqual(fire_gdp.get_column_index(['a', 'b', 'c'], 'b'), 1)
 
+    def test_name_absent(self):
+        self.assertIsNone(fire_gdp.get_column_index(['a', 'b'], 'z'))
+
 
 class TestGetData(unittest.TestCase):
 
