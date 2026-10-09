@@ -39,6 +39,14 @@ class TestGetData(unittest.TestCase):
         self.assertEqual(header,
                          ['Area', 'Year', 'Forest fires', 'Other column'])
         self.assertEqual(len(rows), 8)
+
+
+class TestGetFireGdpYearData(unittest.TestCase):
+
+    def test_brazil(self):
+        result = fire_gdp.get_fire_gdp_year_data(CO2, GDP, 'Brazil')
+        self.assertEqual(result, [[2004, 100.5, 1000.5],
+                                  [2005, 200.25, 2000.25]])
         
 
 if __name__ == '__main__':
