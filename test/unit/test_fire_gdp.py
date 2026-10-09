@@ -28,6 +28,12 @@ class TestGetData(unittest.TestCase):
         for row in rows:
             self.assertEqual(row[0], 'Brazil')
 
+    def test_return_header(self):
+        header, rows = fire_gdp.get_data(CO2, return_header=True)
+        self.assertEqual(header,
+                         ['Area', 'Year', 'Forest fires', 'Other column'])
+        self.assertEqual(len(rows), 8)
+        
 
 if __name__ == '__main__':
     unittest.main()
